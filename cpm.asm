@@ -1048,9 +1048,8 @@ PTEXT:	LD	A,(HL)
 ;            Z-flag reset indicates AUTO-RUN.
 ;  Destroys: A,B,C,D,E,H,L,F
 ;
-OSINIT:	LD	C,45		;*
-	LD	E,254		;*
-	CALL	BDOS		;*
+OSINIT:
+	XOR	A
 	LD	B,INILEN
 	LD	HL,TABLE
 CLRTAB:	LD	(HL),A		;CLEAR FILE TABLE ETC.
