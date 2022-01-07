@@ -31,11 +31,9 @@
 	PUBLIC	POINT
 	PUBLIC	GETIMS
 	PUBLIC	PUTIMS
-	PUBLIC	CLRSCN
 	PUBLIC	PUTCSR
 	PUBLIC	GETCSR
 	PUBLIC	PUTIME
-	PUBLIC	GETIME
 
 	EXTERN	EXTERR
 	EXTERN	TELL
@@ -46,20 +44,6 @@
 	EXTERN	XEQ
 
 ESC	EQU	27
-
-;CLRSCN	- Clear screen.
-;	  (Alter characters to suit your VDU)
-; 	  Destroys: A,D,E,H,L,F
-CLRSCN:	PUSH	BC
-	CALL	TELL
-	DEFB	ESC,"[;H"	; home cursor
-	DEFB	ESC,"[2J"	; clear screen
-	DEFB	0
-	LD	BC,0
-	LD	(TEXTX),BC
-	LD	(TEXTY),BC
-	POP	BC
-	RET
 
 ;PUTCSR	- Move cursor to specified position.
 ;	  Inputs: DE = horizontal position (LHS=0)
@@ -87,13 +71,6 @@ PUTCSR:	LD	(TEXTX),DE		;SAVE X & Y FOR LATER
 ;  	  Destroys: A,D,E,H,L,F
 GETCSR:	LD	DE,(TEXTX)
 	LD	HL,(TEXTY)
-	RET
-
-;GETIME	- Read elapsed-time clock.
-;  	  Outputs: DEHL = elapsed time (centiseconds)
-; 	  Destroys: A,D,E,H,L,F
-GETIME:	LD	DE,0
-	LD	HL,0
 	RET
 
 ;PUTIME	- Load elapsed-time clock.

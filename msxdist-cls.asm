@@ -1,0 +1,12 @@
+	include "msx.inc"
+
+	PUBLIC	CLRSCN
+	EXTERN	CALLSLOT
+
+;CLRSCN	- Clear screen.
+CLRSCN:	PUSH	IY
+	LD	IX, CLS
+	XOR	A
+	CALL	CALLSLOT
+	POP	IY
+	RET
