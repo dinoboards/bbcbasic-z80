@@ -1,6 +1,10 @@
 # BBC BASIC+ for Z80
 
-> [![Build Status](https://travis-ci.org/vipoo/bbcbasic-z80.svg?branch=dean%2Fdevelop)](https://travis-ci.org/vipoo/bbcbasic-z80)
+# Archived and Abandon.
+
+**Please see my work on BBC Basic for the eZ80 CPU (https://github.com/dinoboards/bbcbasic-eZ80-for-rc/tree/dean/converting-to-adl)**
+
+----
 
 This is modified source code based on [BBC BASIC (Z80)](http://www.bbcbasic.co.uk/bbcbasic/z80basic.html) by R.T. Russell, who [kindly agreed](http://cowlark.com/2019-06-14-bbcbasic-opensource/index.html) to release the original sources under the [zlib](COPYING) license at the request of David Given.  David published the sources as part of his [cpmish](https://github.com/davidgiven/cpmish) project.
 
